@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MosaicPixel from "./MosaicPixel";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Mosaic = ({
   images = [],
@@ -7,11 +8,25 @@ const Mosaic = ({
   bgImageUrl = null,
   gridWrapperClassName = null,
   gridWrapperStyle = {},
-  width = 300,
-  height = 300,
-  bgPosition = 'center'
+  width: widthQuery = { xs: 350, md: 500 },
+  height: heightQuery = { xs: 350, md: 500 },
+  bgPosition = "center",
 }) => {
   const [size, setSize] = useState(defaultSize);
+
+  const { isXs, isMd } = useMediaQuery();
+  let width = 350
+  let height = 350;
+
+  if(isXs) {
+    width = widthQuery.xs;
+    height = height.xs;
+  }
+
+  if(isMd) {
+    width = heightQuery.md;
+    height = heightQuery.md;
+  }
 
   useEffect(() => {
     if (defaultSize > 0) setSize(defaultSize);
@@ -55,7 +70,6 @@ const Mosaic = ({
           height={height}
           bgPosition={bgPosition}
         />
-
       ))}
     </div>
   );

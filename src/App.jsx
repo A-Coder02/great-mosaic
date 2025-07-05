@@ -26,8 +26,8 @@ const App = () => {
           boxShadow: "0 0 1em rgba(255,255,255,0.5)",
         }}
         bgPosition="center 8px"
-        width={500}
-        height={500}
+        width={{xs: 350, md: 500}}
+        height={{xs: 350, md: 500}}
       />
     </div>
   );
