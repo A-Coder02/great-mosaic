@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
-
-// import SampleImage from "../../sample-image.png";
 import MosaicPixel from "./MosaicPixel";
-const SampleImage = 'https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png'
 
 
-const CELL_SIZE = 60; // pixel size of each square
-
-const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
+const Mosaic = ({ images = [], size: defaultSize = 14, bgImageUrl = null }) => {
   const [size, setSize] = useState(defaultSize);
 
   useEffect(() => {
@@ -34,7 +29,7 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
         gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
         backgroundColor: "#f9f9f9",
-        backgroundImage: `url(${SampleImage})`,
+        backgroundImage: `url(${bgImageUrl})`,
         position: "relative",
         // width: "fit-content",
         // height: "fit-content",
@@ -51,7 +46,7 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
       />
 
       {images.map((img) => (
-        <MosaicPixel image={img} />
+        <MosaicPixel image={img} bgImageUrl={bgImageUrl} />
       ))}
     </div>
   );
