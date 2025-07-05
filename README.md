@@ -1,12 +1,14 @@
-# React + Vite
+An PhotoGallary where people can add photos to mosaic with their data.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Features :
+1) From tiny images one bigger image will make
+2) We can control default number of rows and columns 
+3) if number of images grow and there is no space in frame, number of columns and rows get increment by 1. It we can also configure by props
+4) isSuperimpose is feature from can user can decide add bg or not
+5) onclick show image with mera.
+6) that card styles can controllable
+7) from where to origin can decide. E.g. from origin, top, bottom, left and right.
+8) add new entry
+9) new entry controllable by onNewEntry() prop
+10) Make libs website and documentation
+11) loading state: loader, star ✨

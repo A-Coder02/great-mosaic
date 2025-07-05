@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import "./App.css";
+import Mosaic from "./components/Mosaic";
+
+import images from "./images.json";
+
+const ROWS = 4;
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div>
+      <Mosaic images={[...images,...images]} size={ROWS} />
+    </div>
+  );
+};
 
-export default App
+export default App;
