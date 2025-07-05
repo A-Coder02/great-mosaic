@@ -26,8 +26,10 @@ const App = () => {
           boxShadow: "0 0 1em rgba(255,255,255,0.5)",
         }}
         bgPosition="center 8px"
-        width={{xs: 350, md: 500, lg: 650}}
-        height={{xs: 350, md: 500, lg: 650}}
+        width={{ xs: 350, md: 500, lg: 650 }}
+        height={{ xs: 350, md: 500, lg: 650 }}
+        // Animations
+        animationType="top"
       />
     </div>
   );

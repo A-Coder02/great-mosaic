@@ -1,7 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const MosaicPixel = ({ image, bgImageUrl, width, height, bgPosition }) => {
+const MosaicPixel = ({
+  image,
+  bgImageUrl,
+  width,
+  height,
+  bgPosition,
+  onClickHandler = () => {},
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const pixelRef = useRef();
+
+  useEffect(()=>{
+    console.log(pixelRef.current)
+  },[])
 
   useEffect(() => {
     if (!image?.link) return;
@@ -15,11 +28,13 @@ const MosaicPixel = ({ image, bgImageUrl, width, height, bgPosition }) => {
     <div key={image.id} className={`mosaic-cell-wrapper`}>
       {!isLoaded ? null : (
         <div
+          ref={pixelRef}
           className="mosaic-cell"
+          onClick={() => onClickHandler(image, pixelRef.current.getBoundingClientRect())}
           style={{
             backgroundImage: `url(${bgImageUrl})`,
             backgroundSize: `${width}px ${height}px`,
-            backgroundPosition: bgPosition
+            backgroundPosition: bgPosition,
           }}
         >
           <div
