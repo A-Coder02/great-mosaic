@@ -9,6 +9,7 @@ const Mosaic = ({
   gridWrapperStyle = {},
   width = 300,
   height = 300,
+  bgPosition = 'center'
 }) => {
   const [size, setSize] = useState(defaultSize);
 
@@ -38,6 +39,7 @@ const Mosaic = ({
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
         backgroundImage: `url(${bgImageUrl})`,
         backgroundSize: `${width}px ${height}px`,
+        backgroundPosition: bgPosition,
         width: `${width}px`,
         height: `${height}px`,
         ...gridWrapperStyle,
@@ -51,7 +53,9 @@ const Mosaic = ({
           bgImageUrl={bgImageUrl}
           width={width}
           height={height}
+          bgPosition={bgPosition}
         />
+
       ))}
     </div>
   );

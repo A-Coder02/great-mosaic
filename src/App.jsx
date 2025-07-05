@@ -23,8 +23,9 @@ const App = () => {
         gridWrapperClassName="custom-mosaic-grid-wrapper"
         // Grid Wrapper custom style
         gridWrapperStyle={{
-          boxShadow: '0 0 1em rgba(255,255,255,0.5)'
+          boxShadow: "0 0 1em rgba(255,255,255,0.5)",
         }}
+        bgPosition="center 8px"
         width={500}
         height={500}
       />

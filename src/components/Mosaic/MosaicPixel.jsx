@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const MosaicPixel = ({ image, bgImageUrl, width, height }) => {
+const MosaicPixel = ({ image, bgImageUrl, width, height, bgPosition }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const MosaicPixel = ({ image, bgImageUrl, width, height }) => {
           style={{
             backgroundImage: `url(${bgImageUrl})`,
             backgroundSize: `${width}px ${height}px`,
+            backgroundPosition: bgPosition
           }}
         >
           <div
