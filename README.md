@@ -12,3 +12,13 @@ Features :
 9) new entry controllable by onNewEntry() prop
 10) Make libs website and documentation
 11) loading state: loader, star ✨
+
+
+<!-- Next Features -->
+- Reponsiveness
+- onClick Card View
+- Card Custom Class and Styles
+- Custom Card (getCard)
+- CameraEnable
+- Camera Card Custom
+- On Camera Submit Confirm
