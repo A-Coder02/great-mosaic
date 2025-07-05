@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SampleImage from "../../sample-image.png"; // Adjust as needed
+// import SampleImage from "../../sample-image.png"; // Adjust as needed
+
+
+const SampleImage = 'https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png'
 
 const MosaicPixel = ({ image }) => {
   const [isLoaded, setIsLoaded] = useState(false);

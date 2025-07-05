@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import SampleImage from "../../sample-image.png";
+// import SampleImage from "../../sample-image.png";
 import MosaicPixel from "./MosaicPixel";
+const SampleImage = 'https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png'
+
 
 const CELL_SIZE = 60; // pixel size of each square
 
