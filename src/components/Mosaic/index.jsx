@@ -37,15 +37,21 @@ const Mosaic = ({
         gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
         backgroundImage: `url(${bgImageUrl})`,
-        width,
-        height,
+        backgroundSize: `${width}px ${height}px`,
+        width: `${width}px`,
+        height: `${height}px`,
         ...gridWrapperStyle,
       }}
     >
       <div className="mosaic-grid-wrapper-overlay" />
 
       {images.map((img) => (
-        <MosaicPixel image={img} bgImageUrl={bgImageUrl} />
+        <MosaicPixel
+          image={img}
+          bgImageUrl={bgImageUrl}
+          width={width}
+          height={height}
+        />
       ))}
     </div>
   );

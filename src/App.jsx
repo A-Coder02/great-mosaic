@@ -10,7 +10,7 @@ const images = Array.from({ length: 400 }, (_, i) => ({
 }));
 
 const SampleImage =
-  "https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png";
+  "https://i.etsystatic.com/32237469/r/il/72bad1/4009560313/il_570xN.4009560313_q4ps.jpg";
 
 const App = () => {
   return (
@@ -25,8 +25,8 @@ const App = () => {
         gridWrapperStyle={{
           boxShadow: '0 0 1em rgba(255,255,255,0.5)'
         }}
-        width={300}
-        height={300}
+        width={500}
+        height={500}
       />
     </div>
   );

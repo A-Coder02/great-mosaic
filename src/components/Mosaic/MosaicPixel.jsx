@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const MosaicPixel = ({ image, bgImageUrl }) => {
+const MosaicPixel = ({ image, bgImageUrl, width, height }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,13 +18,14 @@ const MosaicPixel = ({ image, bgImageUrl }) => {
           className="mosaic-cell"
           style={{
             backgroundImage: `url(${bgImageUrl})`,
+            backgroundSize: `${width}px ${height}px`,
           }}
         >
           <div
             className="mosaic-cell-img"
             style={{
               backgroundImage: `url(${image.link})`,
-              backgroundSize: 'cover'
+              backgroundSize: "cover",
             }}
           ></div>
         </div>
