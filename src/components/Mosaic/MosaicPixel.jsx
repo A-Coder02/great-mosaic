@@ -11,15 +11,12 @@ const MosaicPixel = ({ image, bgImageUrl }) => {
     img.onerror = () => setIsLoaded(false); // optional
   }, [image]);
 
-  //   if (!isLoaded) return null;
-
   return (
     <div key={image.id} className={`mosaic-cell-wrapper`}>
       {!isLoaded ? null : (
         <div
           className="mosaic-cell"
           style={{
-            // aspectRatio: 1,
             backgroundImage: `url(${bgImageUrl})`,
           }}
         >
@@ -30,7 +27,6 @@ const MosaicPixel = ({ image, bgImageUrl }) => {
               backgroundSize: 'cover'
             }}
           ></div>
-          {/* <img className="mosaic-cell-img" src={image.link} /> */}
         </div>
       )}
     </div>

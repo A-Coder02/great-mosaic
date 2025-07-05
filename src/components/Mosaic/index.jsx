@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import MosaicPixel from "./MosaicPixel";
 
-
-const Mosaic = ({ images = [], size: defaultSize = 14, bgImageUrl = null }) => {
+const Mosaic = ({
+  images = [],
+  size: defaultSize = 14,
+  bgImageUrl = null,
+  gridWrapperClassName = null,
+  gridWrapperStyle = {},
+}) => {
   const [size, setSize] = useState(defaultSize);
 
   useEffect(() => {
@@ -23,27 +28,19 @@ const Mosaic = ({ images = [], size: defaultSize = 14, bgImageUrl = null }) => {
 
   return (
     <div
-      className="mosaic-grid-wrapper"
-      style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
-        gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
-        backgroundColor: "#f9f9f9",
-        backgroundImage: `url(${bgImageUrl})`,
-        position: "relative",
-        // width: "fit-content",
-        // height: "fit-content",
-      }}
+      className={`mosaic-grid-wrapper ${
+        gridWrapperClassName ? gridWrapperClassName : ""
+      }`}
+      style={
+        {
+          gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
+          gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
+          backgroundImage: `url(${bgImageUrl})`,
+          ...gridWrapperStyle,
+        }
+      }
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backdropFilter: "grayscale(1)",
-          WebkitBackdropFilter: "grayscale(1)", // for Safari
-          backgroundColor: "rgba(255, 255, 255, 0.2)", // required for backdrop to take effect
-        }}
-      />
+      <div className="mosaic-grid-wrapper-overlay" />
 
       {images.map((img) => (
         <MosaicPixel image={img} bgImageUrl={bgImageUrl} />
