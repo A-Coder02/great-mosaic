@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import SampleImage from "../../sample-image.png";
+import MosaicPixel from "./MosaicPixel";
 
 const CELL_SIZE = 60; // pixel size of each square
 
@@ -30,15 +31,8 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
         display: "grid",
         gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
-        gap: "2px",
-        padding: "10px",
         backgroundColor: "#f9f9f9",
-
         backgroundImage: `url(${SampleImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-
         position: "relative",
         // width: "fit-content",
         // height: "fit-content",
@@ -55,18 +49,7 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
       />
 
       {images.map((img) => (
-        <div
-          key={img.id}
-          style={{
-            aspectRatio: 1,
-            // width: "100%",
-            // height: "100%",
-            backgroundImage: `url(${img.link})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: 'relative'
-          }}
-        />
+        <MosaicPixel image={img} />
       ))}
     </div>
   );
