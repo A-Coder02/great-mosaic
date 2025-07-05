@@ -8,26 +8,30 @@ const Mosaic = ({
   bgImageUrl = null,
   gridWrapperClassName = null,
   gridWrapperStyle = {},
-  width: widthQuery = { xs: 350, md: 500 },
-  height: heightQuery = { xs: 350, md: 500 },
+  width: widthQuery = { xs: 350, md: 500, lg: 700 },
+  height: heightQuery = { xs: 350, md: 500, lg: 700 },
   bgPosition = "center",
 }) => {
   const [size, setSize] = useState(defaultSize);
 
-  const { isXs, isMd } = useMediaQuery();
-  let width = 350
+  const { isXs, isMd, isLg } = useMediaQuery();
+  let width = 350;
   let height = 350;
 
-  if(isXs) {
+  if (isXs) {
     width = widthQuery.xs;
-    height = height.xs;
+    height = heightQuery.xs;
   }
 
-  if(isMd) {
-    width = heightQuery.md;
-    height = heightQuery.md;
+  if (isMd) {
+    width = widthQuery.md || 350;
+    height = heightQuery.md || 350;
   }
 
+  if (isLg) {
+    width = widthQuery.lg || 350;
+    height = heightQuery.lg || 350;
+  }
   useEffect(() => {
     if (defaultSize > 0) setSize(defaultSize);
   }, [defaultSize]);

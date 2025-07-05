@@ -33,21 +33,6 @@ const MosaicPixel = ({ image, bgImageUrl, width, height, bgPosition }) => {
       )}
     </div>
   );
-  return (
-    <div
-      style={{
-        aspectRatio: 1,
-        backgroundImage: `url(${image.link}), url(${SampleImage})`,
-        backgroundSize: "cover, cover",
-        backgroundPosition: "center, center",
-        backgroundRepeat: "no-repeat, no-repeat",
-        backgroundBlendMode: "multiply",
-        position: "relative",
-        zIndex: 2,
-        opacity: 0.9,
-      }}
-    />
-  );
 };
 
 export default MosaicPixel;
