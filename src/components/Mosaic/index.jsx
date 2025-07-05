@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import SampleImage from "../../sample-image.png";
+
 const CELL_SIZE = 60; // pixel size of each square
 
 const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
@@ -19,7 +21,7 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
 
   let numberOfRows = size;
   let numberOfColumns = size;
-// todo: if number of row increment necessary then incementet
+  // todo: if number of row increment necessary then incementet
 
   return (
     <div
@@ -31,10 +33,27 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
         gap: "2px",
         padding: "10px",
         backgroundColor: "#f9f9f9",
+
+        backgroundImage: `url(${SampleImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+        position: "relative",
         // width: "fit-content",
         // height: "fit-content",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backdropFilter: "grayscale(1)",
+          WebkitBackdropFilter: "grayscale(1)", // for Safari
+          backgroundColor: "rgba(255, 255, 255, 0.2)", // required for backdrop to take effect
+        }}
+      />
+
       {images.map((img) => (
         <div
           key={img.id}
@@ -45,6 +64,7 @@ const Mosaic = ({ images = [], size: defaultSize = 14 }) => {
             backgroundImage: `url(${img.link})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            position: 'relative'
           }}
         />
       ))}
