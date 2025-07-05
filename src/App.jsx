@@ -3,10 +3,10 @@ import "./App.css";
 import Mosaic from "./components/Mosaic";
 
 
-const ROWS = 4;
+const ROWS = 20;
 
 
-const images = Array.from({ length: 200 }, (_, i) => ({
+const images = Array.from({ length: 400 }, (_, i) => ({
   id: i + 1,
   link: `https://picsum.photos/id/${101 + i}/400/300`
 }));

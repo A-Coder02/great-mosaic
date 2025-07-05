@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import SampleImage from "../../sample-image.png"; // Adjust as needed
 
-
-const SampleImage = 'https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png'
+const SampleImage =
+  "https://pronttera.com/static/media/logo.088cf799a4cd220295eb.png";
 
 const MosaicPixel = ({ image }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,7 +27,14 @@ const MosaicPixel = ({ image }) => {
             backgroundImage: `url(${SampleImage})`,
           }}
         >
-          <img className="mosaic-cell-img" src={image.link} />
+          <div
+            className="mosaic-cell-img"
+            style={{
+              backgroundImage: `url(${image.link})`,
+              backgroundSize: 'cover'
+            }}
+          ></div>
+          {/* <img className="mosaic-cell-img" src={image.link} /> */}
         </div>
       )}
     </div>
