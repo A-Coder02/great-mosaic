@@ -25,7 +25,8 @@ const App = () => {
         gridWrapperStyle={{
           boxShadow: '0 0 1em rgba(255,255,255,0.5)'
         }}
-
+        width={300}
+        height={300}
       />
     </div>
   );

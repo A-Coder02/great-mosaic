@@ -1,7 +1,5 @@
 .mosaic-grid-wrapper {
   display: grid;
-  width: 300px;
-  height: 300px;
   overflow: auto;
   aspect-ratio: 1;
   margin: 0 auto;

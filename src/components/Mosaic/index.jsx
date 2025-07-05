@@ -7,6 +7,8 @@ const Mosaic = ({
   bgImageUrl = null,
   gridWrapperClassName = null,
   gridWrapperStyle = {},
+  width = 300,
+  height = 300,
 }) => {
   const [size, setSize] = useState(defaultSize);
 
@@ -31,14 +33,14 @@ const Mosaic = ({
       className={`mosaic-grid-wrapper ${
         gridWrapperClassName ? gridWrapperClassName : ""
       }`}
-      style={
-        {
-          gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
-          gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
-          backgroundImage: `url(${bgImageUrl})`,
-          ...gridWrapperStyle,
-        }
-      }
+      style={{
+        gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
+        gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
+        backgroundImage: `url(${bgImageUrl})`,
+        width,
+        height,
+        ...gridWrapperStyle,
+      }}
     >
       <div className="mosaic-grid-wrapper-overlay" />
 
