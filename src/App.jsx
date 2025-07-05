@@ -7,6 +7,7 @@ const ROWS = 20;
 const images = Array.from({ length: 400 }, (_, i) => ({
   id: i + 1,
   link: `https://picsum.photos/id/${101 + i}/400/300`,
+  description: i + 1
 }));
 
 const SampleImage =
@@ -30,6 +31,52 @@ const App = () => {
         height={{ xs: 350, md: 500, lg: 650 }}
         // Animations
         animationType="top"
+        // custom dialog
+        setDialog={(img) => (
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              alignItems: "flex-start",
+              maxWidth: "600px",
+            }}
+          >
+            {/* Left Image */}
+            <img
+              src={img.link}
+              alt="Preview"
+              style={{
+                width: "200px",
+                height: "200px",
+                objectFit: "cover",
+                borderRadius: "12px",
+              }}
+            />
+
+            {/* Right Content */}
+            <div>
+              <h2
+                style={{
+                  margin: 0,
+                  fontSize: "1.5rem",
+                  fontWeight: "600",
+                }}
+              >
+                Image #{img.id}
+              </h2>
+
+              <p
+                style={{
+                  marginTop: "12px",
+                  fontStyle: "italic",
+                  color: "#555",
+                }}
+              >
+                {img.description}
+              </p>
+            </div>
+          </div>
+        )}
       />
     </div>
   );

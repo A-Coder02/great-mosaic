@@ -13,6 +13,7 @@ const Mosaic = ({
   height: heightQuery = { xs: 350, md: 500, lg: 700 },
   bgPosition = "center",
   animationType = "top",
+  setDialog = null 
 }) => {
   const [size, setSize] = useState(defaultSize);
   const [showDialog, setShowDialog] = useState(false);
@@ -96,6 +97,7 @@ const Mosaic = ({
           position={position}
           image={selectedCell}
           onClose={() => setShowDialog(false)}
+          setDialog={setDialog}
         />
       )}
     </div>
